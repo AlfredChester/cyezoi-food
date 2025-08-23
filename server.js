@@ -70,7 +70,8 @@ app.use(
 );
 
 // 静态资源
-app.use(express.static(path.join(__dirname, "public")));
+// 静态资源指向 Vite 构建产物
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
 // 模块化路由挂载
 const foodsRouter = require("./server/routes/foods");
@@ -235,7 +236,7 @@ process.on("unhandledRejection", (reason, promise) => {
   process.exit(1);
 });
 
-// 前端路由兜底（若不是单页应用可省略）
+// 前端路由兜底，指向 Vite 构建产物
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
