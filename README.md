@@ -24,6 +24,9 @@
 
 ## 快速开始
 ```bash
+cd frontend
+npm install
+cd ..
 npm install
 npm run dev     # 开发 (nodemon)
 npm start       # 生产模式
