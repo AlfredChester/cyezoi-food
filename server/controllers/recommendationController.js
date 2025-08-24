@@ -1,5 +1,5 @@
-const Food = require("../../models/Food");
-const DailyRecommendation = require("../../models/DailyRecommendation");
+const Food = require("../models/Food");
+const DailyRecommendation = require("../models/DailyRecommendation");
 
 exports.today = async (req, res) => {
   try {

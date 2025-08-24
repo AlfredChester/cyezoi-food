@@ -1,5 +1,5 @@
-const Review = require("../../models/Review");
-const Food = require("../../models/Food");
+const Review = require("../models/Review");
+const Food = require("../models/Food");
 
 exports.listByFood = async (req, res) => {
   try {
@@ -56,12 +56,10 @@ exports.create = async (req, res) => {
       return res.status(404).json({ success: false, message: "美食不存在" });
     const existing = await Review.findOne({ foodId, userId: req.user._id });
     if (existing)
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: "您已经评论过这个美食了，可以选择修改评论",
-        });
+      return res.status(400).json({
+        success: false,
+        message: "您已经评论过这个美食了，可以选择修改评论",
+      });
     const review = await Review.create({
       foodId,
       userId: req.user._id,
@@ -70,17 +68,15 @@ exports.create = async (req, res) => {
     });
     await review.populate("userId", "username avatar");
     await food.calculateRating();
-    res
-      .status(201)
-      .json({
-        success: true,
-        message: "评论添加成功！",
-        review,
-        foodRating: {
-          averageRating: food.averageRating,
-          reviewsCount: food.reviewsCount,
-        },
-      });
+    res.status(201).json({
+      success: true,
+      message: "评论添加成功！",
+      review,
+      foodRating: {
+        averageRating: food.averageRating,
+        reviewsCount: food.reviewsCount,
+      },
+    });
   } catch (e) {
     if (e.code === 11000)
       return res

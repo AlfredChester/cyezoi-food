@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { verifyToken, requireAdmin } = require("../../middleware/auth");
+const { verifyToken, requireAdmin } = require("../middleware/auth");
 const ctrl = require("../controllers/announcementController");
 
 // 挂载到 /api/announcements

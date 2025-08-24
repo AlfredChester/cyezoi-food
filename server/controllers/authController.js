@@ -1,5 +1,5 @@
-const User = require("../../models/User");
-const { generateToken } = require("../../middleware/auth");
+const User = require("../models/User");
+const { generateToken } = require("../middleware/auth");
 
 exports.register = async (req, res) => {
   try {
@@ -21,12 +21,10 @@ exports.register = async (req, res) => {
     if (existingUser) {
       const conflictField =
         existingUser.email === email.toLowerCase() ? "邮箱" : "用户名";
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: `${conflictField}已被使用，请选择其他${conflictField}`,
-        });
+      return res.status(400).json({
+        success: false,
+        message: `${conflictField}已被使用，请选择其他${conflictField}`,
+      });
     }
 
     const newUser = new User({
@@ -65,12 +63,10 @@ exports.register = async (req, res) => {
     if (error.code === 11000) {
       const field = Object.keys(error.keyValue)[0];
       const fieldName = field === "email" ? "邮箱" : "用户名";
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: `${fieldName}已被使用，请选择其他${fieldName}`,
-        });
+      return res.status(400).json({
+        success: false,
+        message: `${fieldName}已被使用，请选择其他${fieldName}`,
+      });
     }
     res
       .status(500)

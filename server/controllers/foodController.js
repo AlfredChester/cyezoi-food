@@ -1,5 +1,5 @@
 // 修正路径：controllers 位于 server/controllers，模型在项目根 models
-const Food = require("../../models/Food");
+const Food = require("../models/Food");
 
 // 获取美食列表并附带贡献者用户名
 exports.listFoods = async (req, res) => {
