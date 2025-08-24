@@ -5,17 +5,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const User = require("./models/User");
-const Food = require("./models/Food");
-const Review = require("./models/Review");
-const DailyRecommendation = require("./models/DailyRecommendation");
-const {
-  generateToken,
-  verifyToken,
-  requireAdmin,
-  optionalAuth,
-} = require("./middleware/auth");
-
 const app = express();
 const PORT = process.env.PORT || 8000;
 

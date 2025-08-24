@@ -1135,7 +1135,8 @@ button:hover,
 
 .content-area {
   flex: 1;
-  min-width: 0; /* 防止内容溢出 */
+  min-width: 0;
+  /* 防止内容溢出 */
 }
 
 .announcements-sidebar {
@@ -1148,10 +1149,11 @@ button:hover,
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .announcements-sidebar {
     width: 100%;
-    order: -1; /* 在移动端将公告栏移到顶部 */
+    order: -1;
+    /* 在移动端将公告栏移到顶部 */
   }
 }
 
@@ -1163,7 +1165,8 @@ button:hover,
   overflow: hidden;
   position: sticky;
   top: 2rem;
-  margin: 0; /* 重置边距 */
+  margin: 0;
+  /* 重置边距 */
 }
 
 /* 侧边栏中的主标题调整 */
@@ -1300,15 +1303,18 @@ button:hover,
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white !important;
 }
+
 .admin-announce-btn:hover {
   background: linear-gradient(135deg, #5a6fd8, #6a4190);
 }
+
 .admin-announce-tabs {
   display: flex;
   gap: 0;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--border);
 }
+
 .tab-btn {
   padding: .75rem 1.5rem;
   background: transparent;
@@ -1319,16 +1325,20 @@ button:hover,
   color: var(--text-sec);
   transition: var(--transition);
 }
+
 .tab-btn.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
 }
+
 .tab-btn:hover {
   color: var(--accent);
 }
+
 .tab-panel {
   margin-top: 1rem;
 }
+
 .manage-ann-item {
   display: flex;
   justify-content: space-between;
@@ -1340,27 +1350,33 @@ button:hover,
   margin-bottom: .75rem;
   background: var(--bg-alt);
 }
+
 .manage-ann-info {
   flex: 1;
 }
+
 .manage-ann-info h4 {
   margin: 0 0 .5rem 0;
   font-size: 1rem;
 }
+
 .manage-ann-info p {
   margin: .25rem 0;
   color: var(--text-sec);
   font-size: .9rem;
 }
+
 .manage-ann-info small {
   color: var(--text-sec);
   font-size: .8rem;
 }
+
 .manage-ann-actions {
   display: flex;
   gap: .5rem;
   flex-shrink: 0;
 }
+
 .badge {
   display: inline-block;
   padding: 2px 8px;
@@ -1370,6 +1386,7 @@ button:hover,
   background: var(--accent);
   color: white;
 }
+
 .badge.unpublished {
   background: var(--warn);
 }

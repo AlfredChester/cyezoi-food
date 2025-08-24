@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>曹杨二中周边美食</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div id="app-root"></div>
     <div id="modals-root">
-        <div id="reviewModal" class="modal" style="display:none;">
-            <div class="modal-content">
-                <span class="close" onclick="closeReviewModal()">&times;</span>
-                <h2 id="modalTitle">评价</h2>
-                <form id="reviewForm">
-                    <textarea id="reviewContent" required placeholder="写下你的评价..."></textarea>
-                    <div id="starRating" class="star-rating">
-                        <span class="star" data-rating="1">★</span>
-                        <span class="star" data-rating="2">★</span>
-                        <span class="star" data-rating="3">★</span>
-                        <span class="star" data-rating="4">★</span>
-                        <span class="star" data-rating="5">★</span>
-                    </div>
-                    <div id="ratingFeedback" class="rating-feedback">请选择评分</div>
-                    <button type="submit" class="primary">提交评价</button>
-                </form>
-                <div id="reviewsCount" class="reviews-count"></div>
-                <div id="reviewsList"></div>
-                <div id="reviewsPagination" class="pagination"></div>
+      <div id="reviewModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" onclick="closeReviewModal()">&times;</span>
+          <h2 id="modalTitle">评价</h2>
+          <form id="reviewForm">
+            <textarea
+              id="reviewContent"
+              required
+              placeholder="写下你的评价..."
+            ></textarea>
+            <div id="starRating" class="star-rating">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
             </div>
+            <div id="ratingFeedback" class="rating-feedback">请选择评分</div>
+            <button type="submit" class="primary">提交评价</button>
+          </form>
+          <div id="reviewsCount" class="reviews-count"></div>
+          <div id="reviewsList"></div>
+          <div id="reviewsPagination" class="pagination"></div>
         </div>
+      </div>
 
-        <div id="editReviewModal" class="modal" style="display:none;">
-            <div class="modal-content">
-                <span class="close" onclick="closeEditReviewModal()">&times;</span>
-                <h2>编辑评价</h2>
-                <form id="editReviewForm">
-                    <textarea id="editReviewContent" required></textarea>
-                    <div id="editStarRating" class="star-rating">
-                        <span class="star" data-rating="1">★</span>
-                        <span class="star" data-rating="2">★</span>
-                        <span class="star" data-rating="3">★</span>
-                        <span class="star" data-rating="4">★</span>
-                        <span class="star" data-rating="5">★</span>
-                    </div>
-                    <div id="editRatingFeedback" class="rating-feedback">请选择评分</div>
-                    <button type="submit" class="primary">保存修改</button>
-                </form>
+      <div id="editReviewModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" onclick="closeEditReviewModal()">&times;</span>
+          <h2>编辑评价</h2>
+          <form id="editReviewForm">
+            <textarea id="editReviewContent" required></textarea>
+            <div id="editStarRating" class="star-rating">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
             </div>
+            <div id="editRatingFeedback" class="rating-feedback">
+              请选择评分
+            </div>
+            <button type="submit" class="primary">保存修改</button>
+          </form>
         </div>
+      </div>
     </div>
     <script type="module" src="/js/main.js"></script>
-</body>
+  </body>
 </html>

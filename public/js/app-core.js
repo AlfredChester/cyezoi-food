@@ -1,5 +1,5 @@
 // 核心 App 类与基础状态
-import { mountAnnouncements } from './announcements.js';
+import { mountAnnouncements } from "./announcements.js";
 export class App {
   constructor() {
     // 全局状态
@@ -57,14 +57,14 @@ App.prototype.render = function () {
     html = this.renderAuth();
   }
   root.innerHTML = html;
-  
+
   // 如果用户已登录，自动重新挂载公告栏
   if (this.currentUser) {
     setTimeout(async () => {
       try {
         await mountAnnouncements(this);
       } catch (e) {
-        console.warn('重新挂载公告栏失败', e);
+        console.warn("重新挂载公告栏失败", e);
       }
     }, 0);
   }
