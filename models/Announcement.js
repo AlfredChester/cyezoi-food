@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const AnnouncementSchema = new mongoose.Schema(
   {
@@ -6,13 +6,13 @@ const AnnouncementSchema = new mongoose.Schema(
     content: { type: String, required: true },
     pinned: { type: Boolean, default: false },
     published: { type: Boolean, default: true },
-    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timestamps: true }
 );
 
-AnnouncementSchema.virtual('id').get(function () {
+AnnouncementSchema.virtual("id").get(function () {
   return this._id.toString();
 });
 
-module.exports = mongoose.model('Announcement', AnnouncementSchema);
+module.exports = mongoose.model("Announcement", AnnouncementSchema);
